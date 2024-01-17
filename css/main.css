@@ -54,7 +54,7 @@ body{
   width: 100%;
   margin: 50px auto;
   padding: 0 20px;
-  /* display: none; */
+  display: none;
   cursor: pointer;
 }
 
@@ -234,7 +234,7 @@ body{
   width: 100%;
   margin: auto;
   padding: 0 20px;
-  display: none;
+  display: block;
 }
 
 .start-header {

@@ -3,7 +3,25 @@ const restartBtn = document.querySelector("#restart");
 const turnBtn = document.querySelector(".header-turn-btn");
 const scorePlayer1 = document.querySelector(".score-player .score-res");
 const scoreDraw = document.querySelector(".score-draw .score-res");
-const scorePlayer2 = document.querySelector(".score-player2 .score-res");8
+const scorePlayer2 = document.querySelector(".score-player2 .score-res");
+const btns = document.querySelectorAll(".option-btn");
+const active = document.querySelector(".active");
+const game = document.querySelector(".game");
+const start = document.querySelector(".start");
+let img = document.querySelector(".option-img");
+const playerBtn = document.querySelector("#gameWithPlayer");
+
+for (let i = 0; i < btns.length; i++) {
+    btns[i].onclick = function () {
+        let move = (100 / btns.length) * i;
+        active.style.left = move + "%"
+    }
+}
+
+playerBtn.addEventListener("click", () => {
+    start.style.display = "none";
+    game.style.display = "block";
+})
 
 let player1Score = 0;
 let drawScore = 0;
@@ -35,9 +53,9 @@ function cellClicked() {
 
 function updateCell(cell, index) {
     options[index] = currentPlayer;
-    cell.textContent = currentPlayer;
     cell.classList.add(currentPlayer.toLowerCase());
 }
+
 
 function changePlayer() {
     currentPlayer = currentPlayer === "X" ? "O" : "X";
